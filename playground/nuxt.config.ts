@@ -5,6 +5,9 @@ export default defineNuxtConfig({
     ['../src/module', config],
   ],
   devtools: { enabled: false },
+  build: {
+    chunkSizeWarningLimit: 1500,
+  },
   runtimeConfig: {
     database: process.env.MONGODB_URI,
   },
