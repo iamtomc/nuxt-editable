@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   modules: [
     ['../src/module', config],
   ],
+  css: ['~/assets/main.css'],
   devtools: { enabled: false },
   build: {
     chunkSizeWarningLimit: 1500,
