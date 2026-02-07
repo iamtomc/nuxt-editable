@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { EditableCollectionSchemaField } from '../../types'
-import { defineProps, computed } from 'vue'
+import { computed } from 'vue'
 
 
 const props = defineProps<{

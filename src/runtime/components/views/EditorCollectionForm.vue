@@ -10,7 +10,7 @@ import EditorRichTextField from '../fields/EditorRichTextField.vue';
 import EditorOptionsField from '../fields/EditorOptionsField.vue';
 
 // Utilities
-import { defineProps, computed, ref, watch, onMounted } from 'vue'
+import { computed, ref, watch, onMounted } from 'vue'
 import { requestDataForSchemaFields, componentsForFieldTypes } from '../../utilities/form'
 import { getYupValidationSchema } from '../../utilities/validators'
 import { prettifyColumnLabel, formatTimestamps } from '../../utilities';

@@ -2,7 +2,7 @@
 import EditorLogo from "./EditorLogo.vue"
 import { useEditor } from "../composables/editor";
 import type { EditableUser } from '../types'
-import { computed, defineProps } from 'vue'
+import { computed } from 'vue'
 const { view, collections } = useEditor();
 
 const emit = defineEmits<{

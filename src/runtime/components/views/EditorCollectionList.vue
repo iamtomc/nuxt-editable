@@ -10,7 +10,7 @@ import { useDebounceFn } from '@vueuse/core'
 
 // Utilities
 import { prettifyColumnLabel, formatTimestamps } from '../../utilities'
-import { computed, defineProps, ref, onMounted, watch } from 'vue';
+import { computed, ref, onMounted, watch } from 'vue';
 
 // Types
 import { EditableChangeEventType, type EditableChangeEvent, type EditableCollection, type EditableData, type EditableRequestDataEvent } from '../../types'
