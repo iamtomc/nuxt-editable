@@ -102,11 +102,11 @@ onMounted(() => {
         {{ currentCollection.name.plural }}
       </EditorHeading>
       <div class="flex justify-end gap-4">
-        <UInput icon="i-heroicons-magnifying-glass-20-solid" size="lg" color="gray" :trailing="false"
+        <UInput icon="i-heroicons-magnifying-glass-20-solid" size="lg" color="neutral" :trailing="false"
           :placeholder="`Search ${currentCollection.name.plural.toLowerCase()}`" @input="onSearch"
           v-if="ui.collections[view.current.value.collection].search" />
         <slot :name="`${view.current.value.collection}-list-actions`" />
-        <UButton v-if="selected.length && ui.collections[view.current.value.collection].delete" size="lg" color="gray"
+        <UButton v-if="selected.length && ui.collections[view.current.value.collection].delete" size="lg" color="neutral"
           icon="i-heroicons-trash" @click="showDeletionModal = true">
           Delete
         </UButton>

@@ -55,7 +55,7 @@ const options = computed(() => {
         <UBadge
           v-for="label in selectedLabels"
           :key="label"
-          color="gray"
+          color="neutral"
           variant="solid"
         >
           {{ label }}

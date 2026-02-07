@@ -139,22 +139,22 @@ const imageAlt = computed({
       >
         <UButton
           icon="i-ic:baseline-format-bold"
-          color="gray"
+          color="neutral"
           @click="editor.chain().focus().toggleBold().run()"
         />
         <UButton
           icon="i-ic:baseline-format-italic"
-          color="gray"
+          color="neutral"
           @click="editor.chain().focus().toggleItalic().run()"
         />
         <UButton
           icon="i-ic:baseline-format-underlined"
-          color="gray"
+          color="neutral"
           @click="editor.chain().focus().toggleUnderline().run()"
         />
         <UButton
           icon="i-ic:baseline-format-strikethrough"
-          color="gray"
+          color="neutral"
           @click="editor.chain().focus().toggleStrike().run()"
         />
         <UDropdown
@@ -163,7 +163,7 @@ const imageAlt = computed({
           :popper="{ placement: 'bottom-start' }"
         >
           <UButton
-            color="gray"
+            color="neutral"
             :label="`H${headingLevel}`"
             trailing-icon="i-heroicons-chevron-down-20-solid"
             class="font-bold"
@@ -171,7 +171,7 @@ const imageAlt = computed({
         </UDropdown>
         <UButton
           icon="i-ic:baseline-format-quote"
-          color="gray"
+          color="neutral"
           @click="editor.chain().focus().toggleBlockquote().run()"
         />
 
@@ -181,7 +181,7 @@ const imageAlt = computed({
           :popper="{ placement: 'bottom-start' }"
         >
           <UButton
-            color="gray"
+            color="neutral"
             label="Link"
             trailing-icon="i-ic:baseline-insert-link"
           />
@@ -200,7 +200,7 @@ const imageAlt = computed({
                   />
                   <UButton
                     v-if="linkHref"
-                    color="gray"
+                    color="neutral"
                     icon="i-ic:baseline-close"
                     @click="linkHref = null"
                   />
@@ -228,17 +228,17 @@ const imageAlt = computed({
       >
         <UButton
           icon="i-ic:baseline-format-list-bulleted"
-          color="gray"
+          color="neutral"
           @click="editor.chain().focus().toggleBulletList().run()"
         />
         <UButton
           icon="i-ic:baseline-format-list-numbered"
-          color="gray"
+          color="neutral"
           @click="editor.chain().focus().toggleOrderedList().run()"
         />
         <UButton
           icon="i-ic:baseline-horizontal-rule"
-          color="gray"
+          color="neutral"
           @click="editor.chain().focus().setHorizontalRule().run()"
         />
         <!-- Link -->
@@ -247,7 +247,7 @@ const imageAlt = computed({
           :popper="{ placement: 'bottom-start' }"
         >
           <UButton
-            color="gray"
+            color="neutral"
             icon="i-ic:baseline-image"
           />
           <template #panel>
@@ -265,7 +265,7 @@ const imageAlt = computed({
                   />
                   <UButton
                     v-if="imageURL"
-                    color="gray"
+                    color="neutral"
                     icon="i-ic:baseline-close"
                     @click="imageURL = null"
                   />
