@@ -28,7 +28,7 @@ export default defineNuxtModule({
     // Add the options to the public runtime config
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
       editable: {
-        ui: defu(uiDefaults, config.ui),
+        ui: defu(config.ui, uiDefaults),
         log: config.log,
         // @todo: Add a secure way of exposing the collections
         collections: config.collections || {}

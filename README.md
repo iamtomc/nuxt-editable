@@ -267,7 +267,7 @@ npm run test
 - [ ] @nuxt/schema
 - [ ] @nuxt/module-builder
 - [ ] @nuxt/test-utils
-- [ ] @nuxt/ui (move to v3 for Nuxt 4)
+- [ ] @nuxt/ui (move to v4 for Nuxt 4)
 - [ ] @nuxtjs/google-fonts (verify Nuxt 4 compatibility)
 - [ ] nuxt-icon (verify or remove if unused)
 
