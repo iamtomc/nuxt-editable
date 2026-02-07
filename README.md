@@ -258,6 +258,31 @@ npm run lint
 
 # Run Vitest
 npm run test
+
+## Upgrade tracking (Nuxt 3 → Nuxt 4)
+
+### Dependencies to update
+- [ ] nuxt (Nuxt 3 latest, then Nuxt 4)
+- [ ] @nuxt/kit
+- [ ] @nuxt/schema
+- [ ] @nuxt/module-builder
+- [ ] @nuxt/test-utils
+- [ ] @nuxt/ui (move to v4 for Nuxt 4)
+- [ ] @nuxtjs/google-fonts (verify Nuxt 4 compatibility)
+- [ ] nuxt-icon (verify or remove if unused)
+
+### Tasks
+- [ ] Inventory Nuxt deps
+  - Review and pin upgrade targets in package.json for Nuxt 3 latest, Nuxt 4, @nuxt/kit, @nuxt/schema, @nuxt/module-builder, @nuxt/test-utils, @nuxt/ui, @nuxtjs/google-fonts, nuxt-icon.
+- [ ] Prepare Nuxt 3 fixes
+  - Update runtimeConfig merge in src/module.ts, add meta.compatibility, verify tailwind hook usage; adjust tests if needed.
+- [ ] Upgrade Nuxt UI
+  - Migrate components/composables under src/runtime/components to Nuxt UI v3 API; validate defineShortcuts and U* component props.
+- [ ] Nuxt 4 compatibility pass
+  - Adjust module install hooks, public runtime config usage, and any Nuxt 4 API changes; update tests to Nuxt 4 test-utils.
+- [ ] Validate examples/playground
+  - Ensure playground and example configs build with upgraded deps; run type checks/tests as needed.
+
 npm run test:watch
 
 # Release new version

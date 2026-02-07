@@ -76,7 +76,7 @@ const listActionsSlotName = computed(() => `${view.current.value.collection}-lis
   <div v-if="isEnabled" class="overflow-hidden sm:px-4 fixed w-screen flex flex-col justify-end transition-colors"
     :class="{'h-26 pt-0 bottom-0': isCollapsed, 'bg-black/10 dark:bg-black/5 h-screen inset-0': !isCollapsed}"
     v-bind="$attrs">
-    <UButton color="white" class="mx-auto mb-4"
+    <UButton color="neutral" class="mx-auto mb-4"
       :icon="isCollapsed ? 'i-heroicons-arrow-up-solid' : 'i-heroicons-arrow-down-solid'"
       :ui="{ rounded: 'rounded-full' }" @click="toggle">
       {{ !isCollapsed ? 'Hide Editor' : 'Show Editor' }}

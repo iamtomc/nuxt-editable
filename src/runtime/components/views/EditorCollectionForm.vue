@@ -72,7 +72,7 @@ const formComponents = Object.entries(currentCollection.value.schema).reduce((ac
             props: {
               label: prettifyColumnLabel(key),
                 readonly: ui.collections[currentCollectionKey.value].create ? false : true,
-                ...component.props,       
+                ...component.props,
             }
         }
     } else {
@@ -115,7 +115,7 @@ onMounted(() => {
         </EditorHeading>
         <div class="flex justify-end gap-4">
           <slot :name="`${view.current.value.collection}-form-actions`" />
-          <UButton size="lg" color="gray" @click="view.go({ view: 'collections' })">
+          <UButton size="lg" color="neutral" @click="view.go({ view: 'collections' })">
             Cancel
           </UButton>
           <UButton size="lg" type="submit" v-if="ui.collections[view.current.value.collection].create">
@@ -149,7 +149,7 @@ onMounted(() => {
             </li>
           </ul>
           <div class="flex gap-4 mt-4" v-if="ui.collections[view.current.value.collection].delete">
-            <UButton color="white" @click="showDeletionModal = true">
+            <UButton color="neutral" @click="showDeletionModal = true">
               Delete
             </UButton>
           </div>

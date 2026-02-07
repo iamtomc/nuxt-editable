@@ -20,7 +20,7 @@ const fieldOptions = computed(() => {
                 value: props.field.options.valueField ? item[props.field.options.valueField] : item,
                 label: item[props.field.options.labelField] || item.name || item.id || item
             }
-        
+
         })
     } else {
         return []
@@ -55,7 +55,7 @@ const options = computed(() => {
         <UBadge
           v-for="label in selectedLabels"
           :key="label"
-          color="gray"
+          color="neutral"
           variant="solid"
         >
           {{ label }}

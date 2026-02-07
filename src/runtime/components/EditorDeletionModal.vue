@@ -27,12 +27,12 @@ const isOpen = computed({
         <div class="flex gap-2 justify-end">
           <UButton
             label="Cancel"
-            color="white"
+            color="neutral"
             @click="isOpen = false"
           />
           <UButton
             label="Delete"
-            color="red"
+            color="error"
             @click="emit('delete')"
           />
         </div>

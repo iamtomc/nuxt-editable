@@ -7,7 +7,10 @@ export * from './runtime/types'
 export default defineNuxtModule({
   meta: {
     name: 'nuxt-editable',
-    configKey: 'editable'
+    configKey: 'editable',
+    compatibility: {
+      nuxt: '^4.0.0'
+    }
   },
   defaults: {
     collections: {},
@@ -20,17 +23,19 @@ export default defineNuxtModule({
     const config = options //await import(configPath)
 
     // Add the options to the private runtime config
-    nuxt.options.runtimeConfig.editable = options
+    nuxt.options.runtimeConfig.editable = defu(nuxt.options.runtimeConfig.editable, options)
 
     // Add the options to the public runtime config
-    nuxt.options.runtimeConfig.public.editable = {
-      ui: defu(uiDefaults, config.ui),
-      log: config.log,
-      // @todo: Add a secure way of exposing the collections
-      collections: config.collections || {}
-    }
-    
-    
+    nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
+      editable: {
+        ui: defu(config.ui, uiDefaults),
+        log: config.log,
+        // @todo: Add a secure way of exposing the collections
+        collections: config.collections || {}
+      }
+    })
+
+
     // Add Editor plugin, components and composables
     addPlugin(resolver.resolve('./runtime/plugin'))
     addImportsDir(resolver.resolve('./runtime/composables'))
@@ -43,7 +48,7 @@ export default defineNuxtModule({
       tailwindConfig.content = tailwindConfig.content ?? { files: [] };
       (Array.isArray(tailwindConfig.content) ? tailwindConfig.content : tailwindConfig.content.files).push(resolver.resolve('./runtime/components/**/*.{vue,mjs,ts}'))
     })
-    
+
     await installModule('@nuxtjs/google-fonts', {
       families: {
         'DM+Sans': {
@@ -51,7 +56,7 @@ export default defineNuxtModule({
         }
       }
     })
-    
+
     await installModule('@nuxt/ui')
 
     // TODO: See if that could work for the esm build issue.
