@@ -10,15 +10,15 @@
       :data="collectionsRows"
       :columns="columns"
       class="border dark:border-gray-800 dark:shadow-lg rounded-lg bg-white dark:bg-gray-950"
-      @select="row => view.go({ view: 'collections', collection: row.key })"
+      @select="row => view.go({ view: 'collections', collection: row.original?.key })"
     >
       <template #name-cell="{ row }">
         <div class="flex items-center gap-2">
           <UIcon
-            :name="row.icon"
+            :name="row.original?.icon"
             size="16"
           />
-          {{ row.name.plural }}
+          {{ row.original?.name?.plural || '' }}
         </div>
       </template>
     </UTable>
