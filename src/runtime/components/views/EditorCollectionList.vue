@@ -32,25 +32,33 @@ const props = defineProps<{
 }>();
 
 const columns = computed(() => {
-  const schemaColumns = Object.keys(currentCollection.value.schema).map(key => {
+  const schemaKeys = Object.keys(currentCollection.value?.schema || {})
+  const schemaColumns = schemaKeys.map((key) => {
     return {
-      key: key,
-      label: prettifyColumnLabel(key),
-      sortable: true
+      id: key,
+      accessorKey: key,
+      header: prettifyColumnLabel(key),
+      enableSorting: true
     }
   })
 
+  const primaryColumn = schemaColumns.length ? [schemaColumns[0]] : []
+
   return [
-    schemaColumns[0],
+    ...primaryColumn,
     {
-      label: 'Created at',
-      key: 'created_at',
-      sortable: true
-    }, {
-      label: 'Updated at',
-      key: 'updated_at',
-      sortable: true
-    }]
+      id: 'created_at',
+      accessorKey: 'created_at',
+      header: 'Created at',
+      enableSorting: true
+    },
+    {
+      id: 'updated_at',
+      accessorKey: 'updated_at',
+      header: 'Updated at',
+      enableSorting: true
+    }
+  ]
 })
 
 const rows = computed(() => {
@@ -120,11 +128,11 @@ onMounted(() => {
     <div v-if="currentCollection.description" class="text-sm text-gray-500 dark:text-gray-300 mb-4">
       {{ currentCollection.description }}
     </div>
-    <UTable v-model="selected" :rows="rows" :columns="columns" :loading="pending"
+    <UTable v-model="selected" :data="rows" :columns="columns" :loading="pending"
       class="border dark:border-gray-800 rounded-lg bg-white dark:bg-gray-950"
       :empty-state="{ icon: currentCollection.icon, label: `No ${currentCollection.name.plural}.` }"
       @select="row => view.go({ view: 'collections', collection: view.current.value.collection, item: row.id || row._id })">
-      <template #name-data="{ row }">
+      <template #name-cell="{ row }">
         <span class="capitalize">{{ row.name }}</span>
       </template>
     </UTable>
