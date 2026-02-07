@@ -20,7 +20,7 @@ const fieldOptions = computed(() => {
                 value: props.field.options.valueField ? item[props.field.options.valueField] : item,
                 label: item[props.field.options.labelField] || item.name || item.id || item
             }
-        
+
         })
     } else {
         return []

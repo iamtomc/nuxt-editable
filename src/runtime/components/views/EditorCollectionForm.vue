@@ -72,7 +72,7 @@ const formComponents = Object.entries(currentCollection.value.schema).reduce((ac
             props: {
               label: prettifyColumnLabel(key),
                 readonly: ui.collections[currentCollectionKey.value].create ? false : true,
-                ...component.props,       
+                ...component.props,
             }
         }
     } else {

@@ -9,7 +9,7 @@ export default defineNuxtModule({
     name: 'nuxt-editable',
     configKey: 'editable',
     compatibility: {
-      nuxt: '^3.0.0'
+      nuxt: '^4.0.0'
     }
   },
   defaults: {
@@ -34,8 +34,8 @@ export default defineNuxtModule({
         collections: config.collections || {}
       }
     })
-    
-    
+
+
     // Add Editor plugin, components and composables
     addPlugin(resolver.resolve('./runtime/plugin'))
     addImportsDir(resolver.resolve('./runtime/composables'))
@@ -48,7 +48,7 @@ export default defineNuxtModule({
       tailwindConfig.content = tailwindConfig.content ?? { files: [] };
       (Array.isArray(tailwindConfig.content) ? tailwindConfig.content : tailwindConfig.content.files).push(resolver.resolve('./runtime/components/**/*.{vue,mjs,ts}'))
     })
-    
+
     await installModule('@nuxtjs/google-fonts', {
       families: {
         'DM+Sans': {
@@ -56,7 +56,7 @@ export default defineNuxtModule({
         }
       }
     })
-    
+
     await installModule('@nuxt/ui')
 
     // TODO: See if that could work for the esm build issue.

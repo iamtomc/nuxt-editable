@@ -39,7 +39,7 @@ const columns = computed(() => {
       sortable: true
     }
   })
-  
+
   return [
     schemaColumns[0],
     {
