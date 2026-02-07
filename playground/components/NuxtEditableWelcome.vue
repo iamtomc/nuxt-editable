@@ -42,7 +42,7 @@ const { data: products } = useFetch('/api/products', {
           >
             Enable Editor
           </UButton>
-          <UDivider class="my-8" />
+          <USeparator class="my-8" />
           <ul class="grid grid-cols-2 gap-4"> 
             <li
               v-for="product in products"

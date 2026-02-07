@@ -30,7 +30,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             body: event.data
         })
     } catch (error) {
-        toast.add({ title: error, color: 'red', type: 'error' })
+        toast.add({ title: error, color: 'error', type: 'error' })
     }
 }
 </script>
@@ -44,7 +44,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         :state="state"
         @submit="onSubmit"
       >
-        <UFormGroup
+        <UFormField
           label="Email"
           name="email"
         >
@@ -54,8 +54,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             type="email"
             size="xl"
           />
-        </UFormGroup>
-        <UFormGroup
+        </UFormField>
+        <UFormField
           label="Password"
           name="password"
         >
@@ -65,7 +65,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             type="password"
             size="xl"
           />
-        </UFormGroup>
+        </UFormField>
         <UButton
           type="submit"
           block

@@ -83,8 +83,17 @@ const listActionsSlotName = computed(() => `${view.current.value.collection}-lis
     </UButton>
 
     <UContainer class="w-full">
-      <UNotification v-for="msg in toast.messages.value" :key="msg.id" :ui="{ rounded: 'rounded-none rounded-t-lg' }"
-        v-bind="msg" :callback="() => toast.remove(msg.id)" />
+      <UAlert
+        v-for="msg in toast.messages.value"
+        :key="msg.id"
+        :title="msg.title"
+        :description="msg.description"
+        :color="msg.color === 'red' ? 'error' : msg.color"
+        :variant="msg.variant || 'solid'"
+        close
+        :ui="{ base: 'rounded-none rounded-t-lg' }"
+        @update:open="value => { if (!value) toast.remove(msg.id) }"
+      />
     </UContainer>
 
     <EditorBody>

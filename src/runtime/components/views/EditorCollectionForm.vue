@@ -125,16 +125,16 @@ onMounted(() => {
       </div>
       <UCard>
         <div class="space-y-4">
-          <UFormGroup v-for="(item, key) in formComponents" :key="key" :label="item.props.label" :name="key"
+          <UFormField v-for="(item, key) in formComponents" :key="key" :label="item.props.label" :name="key"
             :help="item.schema.help" :hint="item.label">
             <UInput v-if="item.component === 'UInput'" v-model="state[key]" v-bind="item.props" size="lg" />
             <UTextarea v-if="item.component === 'UTextarea'" v-model="state[key]" v-bind="item.props" size="lg" />
-            <UToggle v-else-if="item.component === 'UToggle'" v-model="state[key]" v-bind="item.props" size="lg" />
+            <USwitch v-else-if="item.component === 'USwitch'" v-model="state[key]" v-bind="item.props" size="lg" />
             <EditorOptionsField v-else-if="item.component === 'EditorOptionsField'" v-model="state[key]" :data="data"
               :field="item.schema" :component-props="item.props" size="lg" />
             <EditorRichTextField v-else-if="item.component === 'EditorRichTextField'" v-model="state[key]"
               :component-props="item.props" size="lg" />
-          </UFormGroup>
+          </UFormField>
         </div>
         <template v-if="!isNewPost" #footer>
           <ul class="text-xs text-gray-500 leading-relaxed">

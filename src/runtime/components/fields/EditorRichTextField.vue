@@ -158,7 +158,7 @@ const imageAlt = computed({
           color="neutral"
           @click="editor.chain().focus().toggleStrike().run()"
         />
-        <UDropdown
+        <UDropdownMenu
           :items="[headingDropdownButtons]"
           mode="hover"
           :popper="{ placement: 'bottom-start' }"
@@ -169,7 +169,7 @@ const imageAlt = computed({
             trailing-icon="i-heroicons-chevron-down-20-solid"
             class="font-bold"
           />
-        </UDropdown>
+        </UDropdownMenu>
         <UButton
           icon="i-ic:baseline-format-quote"
           color="neutral"
@@ -188,7 +188,7 @@ const imageAlt = computed({
           />
           <template #panel>
             <div class="p-4">
-              <UFormGroup label="URL">
+              <UFormField label="URL">
                 <UButtonGroup
                   size="sm"
                   class="mb-2"
@@ -206,7 +206,7 @@ const imageAlt = computed({
                     @click="linkHref = null"
                   />
                 </UButtonGroup>
-              </UFormGroup>
+              </UFormField>
               <UCheckbox
                 v-model="linkTarget"
                 label="Open in new Tab"
@@ -253,7 +253,7 @@ const imageAlt = computed({
           />
           <template #panel>
             <div class="p-4">
-              <UFormGroup label="Image URL">
+              <UFormField label="Image URL">
                 <UButtonGroup
                   size="sm"
                   class="mb-2"
@@ -271,7 +271,7 @@ const imageAlt = computed({
                     @click="imageURL = null"
                   />
                 </UButtonGroup>
-              </UFormGroup>
+              </UFormField>
               <UInput
                 v-model="imageAlt"
                 type="text"

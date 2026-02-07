@@ -26,6 +26,6 @@ export const componentsForFieldTypes = {
     date: { label: 'Date', component: 'UInput', props: { type: 'date' }, defaultValue: null },
     datetime: { label: 'Date and time', component: 'UInput', props: { type: 'datetime' }, defaultValue: null },
     options: { label: 'Options', component: 'EditorOptionsField', props: { }, defaultValue: [] },
-  switch: { label: 'Switch', component: 'UToggle', props: { type: 'text' }, defaultValue: false },
+  switch: { label: 'Switch', component: 'USwitch', props: { type: 'text' }, defaultValue: false },
     'rich-text': { label: 'Rich text', component: 'EditorRichTextField', props: { rows: 10 }, defaultValue: '' },
 }

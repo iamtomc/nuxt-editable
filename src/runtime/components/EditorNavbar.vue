@@ -40,11 +40,11 @@ defineProps<{
       class="px-4"
       size="sm"
     />
-    <UHorizontalNavigation
-      :links="collectionNavItems"
+    <UNavigationMenu
+      :items="collectionNavItems"
       class="py-1 px-2 border-x"
     />
-    <UDropdown
+    <UDropdownMenu
       :items="items"
       class="flex-none p-4"
     >
@@ -57,6 +57,6 @@ defineProps<{
         <span class="hidden sm:block">{{ user.name }}</span>
         <UIcon name="i-heroicons-chevron-down" />
       </button>
-    </UDropdown>
+    </UDropdownMenu>
   </div>
 </template>
