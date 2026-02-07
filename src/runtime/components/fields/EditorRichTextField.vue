@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Editor, EditorContent, BubbleMenu, FloatingMenu } from '@tiptap/vue-3'
+import { Editor, EditorContent } from '@tiptap/vue-3'
+import { BubbleMenu, FloatingMenu } from '@tiptap/vue-3/menus'
 import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
 import Link from '@tiptap/extension-link'

@@ -9,7 +9,7 @@ const { data: products } = useFetch('/api/products', {
 </script>
 
 <template>
-  <section class="py-16 sm:py-32">
+  <section class="py-16 sm:py-32 bg-gray-100 dark:bg-gray-950">
     <UContainer class="max-w-6xl">
       <h1 class="text-center text-4xl sm:text-5xl font-bold mb-10">
         👋 Welcome to Nuxt Editable!
@@ -107,7 +107,7 @@ const { data: products } = useFetch('/api/products', {
           <UButton
             to="https://github.com/NvdB31/nuxt-editable/blob/main/README.md"
             icon="i-heroicons-document-text"
-            color="gray"
+            color="neutral"
           >
             Go to Docs
           </UButton>
@@ -116,9 +116,3 @@ const { data: products } = useFetch('/api/products', {
     </UContainer>
   </section>
 </template>
-
-<style lang="postcss">
-body {
-  @apply bg-gray-100 dark:bg-gray-950;
-}
-</style>
